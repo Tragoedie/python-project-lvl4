@@ -7,8 +7,14 @@ authors = ["Tragoedia <tragoedia@mail.ru>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 Django = "^4.0.4"
+python-dotenv = "^0.20.0"
+gunicorn = "^20.1.0"
+django-bootstrap4 = "^22.1"
 
 [tool.poetry.dev-dependencies]
+wemake-python-styleguide = "^0.16.1"
+pytest-django = "^4.5.2"
+pytest-cov = "^3.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
