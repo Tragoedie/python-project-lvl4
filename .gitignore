@@ -1,0 +1,7 @@
+__pycache__
+dist/
+.venv/
+coverage.xml
+.coverage
+tests/hexlet test/
+page_loader/dir_for_load/
