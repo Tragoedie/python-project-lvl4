@@ -143,7 +143,7 @@ class UserTestCase(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
-            'User successfully changed',
+            'User successfully changed.',
         )
         self.assertEqual(CustomUser.objects.get(pk=1).first_name, 'test_update')
         self.assertEqual(CustomUser.objects.get(pk=1).last_name, 'test_update')
@@ -160,7 +160,7 @@ class UserTestCase(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
-            'User successfully deleted',
+            'User successfully deleted.',
         )
         with self.assertRaises(CustomUser.DoesNotExist):
             CustomUser.objects.get(pk=1)

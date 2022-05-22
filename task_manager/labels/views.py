@@ -16,7 +16,7 @@ class LabelCreateView(CustomLoginMixin, SuccessMessageMixin, CreateView):
     template_name = 'label_create.html'
     model = Label
     success_url = reverse_lazy('labels')
-    success_message = _('Label successfully created')
+    success_message = _('Label successfully created.')
     fields = ['name']
 
 
@@ -24,7 +24,7 @@ class LabelUpdateView(CustomLoginMixin, SuccessMessageMixin, UpdateView):
     template_name = 'label_update.html'
     model = Label
     success_url = reverse_lazy('labels')
-    success_message = _('Label successfully changed')
+    success_message = _('Label successfully changed.')
     fields = ['name']
 
 
@@ -32,7 +32,7 @@ class LabelDeleteView(CustomDeleteView):
     model = Label
     template_name = 'label_delete.html'
     success_url = reverse_lazy('labels')
-    success_message = _('Label successfully deleted')
+    success_message = _('Label successfully deleted.')
     deletion_error_message = _(
-        'Can not delete label because it is in use',
+        'Can not delete this label - because it is in use.',
     )

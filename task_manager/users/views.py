@@ -45,7 +45,7 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
     model = CustomUser
     success_url = reverse_lazy('users')
     form_class = RegisterUpdateForm
-    success_message = _('User successfully changed')
+    success_message = _('User successfully changed.')
     unable_to_change_message = _(
         'You have not permission to change another user.',
     )
@@ -63,7 +63,7 @@ class UserDeleteView(CustomDeleteView):
     template_name = 'user_delete.html'
     model = CustomUser
     success_url = reverse_lazy('users')
-    success_message = _('User successfully deleted')
+    success_message = _('User successfully deleted.')
     unable_to_change_message = _(
         'You have not permission to deleted another user.',
     )

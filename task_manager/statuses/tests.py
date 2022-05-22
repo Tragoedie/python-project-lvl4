@@ -20,12 +20,12 @@ class StatusTestCase(TestCase):
             password='bj0epvTN',
         )
         user_test.save()
-        test_status = Status.objects.create(
+        status_test = Status.objects.create(
             name='status_test',
         )
         Task.objects.create(
             name='task_test',
-            status=test_status,
+            status=status_test,
             tasks_author=user_test,
             tasks_executor=user_test,
         )
@@ -52,7 +52,7 @@ class StatusTestCase(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
-            'Status successfully created',
+            'Status successfully created.',
         )
         self.assertEqual(response.status_code, CODE_REDIRECT)
         self.assertEqual(Status.objects.get(pk=2).name, 'status_test_2')
@@ -61,15 +61,15 @@ class StatusTestCase(TestCase):
         response = self.client.get(reverse('status_update', args='1'))
         self.assertEqual(response.status_code, CODE_OK)
         self.assertTemplateUsed(response, template_name='status_update.html')
-        status_data = {'name': 'status_update'}
+        status_update = {'name': 'status_update'}
         response = self.client.post(reverse(
             'status_update', args='1'),
-            data=status_data,
+            data=status_update,
         )
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
-            'Status successfully changed',
+            'Status successfully changed.',
         )
         self.assertEqual(response.status_code, CODE_REDIRECT)
         self.assertEqual(Status.objects.get(pk=1).name, 'status_update')
@@ -84,7 +84,7 @@ class StatusTestCase(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
-            'Status successfully deleted',
+            'Status successfully deleted.',
         )
         with self.assertRaises(Status.DoesNotExist):
             Status.objects.get(pk=2)
@@ -95,5 +95,5 @@ class StatusTestCase(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
-            'Can not delete this status - because it is in use',
+            'Can not delete this status - because it is in use.',
         )
