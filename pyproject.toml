@@ -3,6 +3,9 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["Tragoedia <tragoedia@mail.ru>"]
+packages = [
+  { include = "task_manager" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -10,6 +13,8 @@ Django = "^4.0.4"
 python-dotenv = "^0.20.0"
 gunicorn = "^20.1.0"
 django-bootstrap4 = "^22.1"
+django-filter = "^21.1"
+rollbar = "^0.16.2"
 
 [tool.poetry.dev-dependencies]
 wemake-python-styleguide = "^0.16.1"

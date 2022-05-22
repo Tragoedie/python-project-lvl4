@@ -1,0 +1,13 @@
+{% extends 'layout/basic.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="my-4">{% trans 'Delete user' %}</h1>
+<p>{% translate 'Are you sure that you want to delete user' %} <b>{{ user.get_full_name }}?</b>?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">{% trans 'Delete' %}</button>
+</form>
+{% endblock %}

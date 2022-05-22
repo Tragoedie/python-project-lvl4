@@ -1,0 +1,38 @@
+{% extends 'layout/basic.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="my-4">{% trans 'Users' %}</h1>
+{% if users_list %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>{% trans 'Username' %}</th>
+            <th>{% trans 'Full name' %}</th>
+            <th>{% trans 'Date joined' %}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users_list %}
+        <tr>
+            <td>{{ user.pk }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user }}</td>
+            <td>{{ user.date_joined|date:"d.m.Y, H:i:s" }}</td>
+            <td>
+                <a href="{% url 'user_update' user.pk %}">{% trans 'Update' %}</a>
+                <br>
+                <a href="{% url 'user_delete' user.pk %}">{% trans 'Delete' %}</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h2 class="display-6 text-center mb-4">{% trans 'No users' %}</h2>
+{% endif %}
+{% endblock %}

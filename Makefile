@@ -4,7 +4,7 @@ install:
 	poetry install
 
 test:
-	poetry run pytest
+	$(MANAGE) test
 
 test-coverage:
 	poetry run pytest --cov=task_manager --cov-report xml
@@ -22,13 +22,7 @@ migrate:
 	$(MANAGE) migrate
 
 shell:
-	$(MANAGE) shell_plus 
+	$(MANAGE) shell
 
 run:
 	$(MANAGE) runserver
-
-messages:
-	$(MANAGE) makemessages -l ru
-
-compile:
-	$(MANAGE) compilemessages --ignore=cache --ignore=.venv/*/locale

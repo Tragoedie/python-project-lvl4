@@ -1,0 +1,13 @@
+{% extends 'layout/basic.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="my-4">{% trans 'Delete task' %}</h1>
+<p>{% trans 'Are you sure that you want to delete task' %} <b>{{ task.name }}?</b>?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">{% trans 'Delete' %}</button>
+</form>
+{% endblock %}

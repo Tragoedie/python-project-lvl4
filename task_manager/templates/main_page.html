@@ -1,0 +1,20 @@
+{% extends 'layout/basic.html' %}
+
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<h1 class="my-4"></h1>
+<h1 class="my-4"></h1>
+<div class="card">
+  <div class="card-body p-5 bg-light">
+    {% trans 'guest' as guest %}
+    <div class="display-4">{% trans 'Welcome to Task Manager,' %}
+      {% trans 'guest' as guest %}
+      {{user.get_username|default:guest }}!</div>
+    <p class="lead">{% trans 'Task Manager - the fourth project of the hexlet school.' %}</p>
+    <hr>
+    <a class="btn btn-primary btn-lg" href="https://ru.hexlet.io">{% trans 'Learn more' %}</a>
+  </div>
+</div>
+{% endblock %}
