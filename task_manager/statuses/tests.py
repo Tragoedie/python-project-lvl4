@@ -1,7 +1,6 @@
 from django.contrib.messages import get_messages
 from django.test import TestCase
 from django.urls import reverse
-
 from task_manager.statuses.models import Status
 from task_manager.tasks.models import Task
 from task_manager.users.models import CustomUser
@@ -62,8 +61,8 @@ class StatusTestCase(TestCase):
         self.assertEqual(response.status_code, CODE_OK)
         self.assertTemplateUsed(response, template_name='status_update.html')
         status_update = {'name': 'status_update'}
-        response = self.client.post(reverse(
-            'status_update', args='1'),
+        response = self.client.post(
+            reverse('status_update', args='1'),
             data=status_update,
         )
         messages = list(get_messages(response.wsgi_request))

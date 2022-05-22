@@ -1,7 +1,6 @@
 from django.contrib.messages import get_messages
 from django.test import TestCase
 from django.urls import reverse
-
 from task_manager.labels.models import Label
 from task_manager.statuses.models import Status
 from task_manager.tasks.models import Task
@@ -96,7 +95,10 @@ class TaskTestCase(TestCase):
         self.assertEqual(Task.objects.get(pk=1).name, 'task_update')
         self.assertEqual(Task.objects.get(pk=1).description, 'task_update')
         self.assertEqual(Task.objects.get(pk=1).status.name, 'status_update')
-        self.assertEqual(Task.objects.get(pk=1).tasks_executor.username, 'test_user_1')
+        self.assertEqual(
+            Task.objects.get(pk=1).tasks_executor.username,
+            'test_user_1',
+        )
 
     def test_task_delete(self):
         response = self.client.get(reverse('task_delete', args='1'))
