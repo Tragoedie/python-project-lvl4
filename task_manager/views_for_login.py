@@ -18,7 +18,7 @@ class CustomLoginMixin(LoginRequiredMixin):
 
 
 class CustomDeleteView(SuccessMessageMixin, CustomLoginMixin, DeleteView):
-    delete_error_message = None
+    deletion_error_message = None
     success_url = None
 
     def post(self, request, *args, **kwargs):
@@ -26,6 +26,6 @@ class CustomDeleteView(SuccessMessageMixin, CustomLoginMixin, DeleteView):
             return super().post(request, *args, **kwargs)
         except ProtectedError:
             messages.error(
-                self.request, self.delete_error_message,
+                self.request, self.deletion_error_message,
             )
             return redirect(self.success_url)

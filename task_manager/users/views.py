@@ -68,7 +68,7 @@ class UserDeleteView(CustomDeleteView):
         'You have not permission to deleted another user.',
     )
     deletion_error_message = _(
-        'You can not delete this user - because it is in use',
+        'You can not delete this user - because it is in use.',
     )
 
     def get(self, request, *args, **kwargs):
