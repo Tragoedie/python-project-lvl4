@@ -10,7 +10,7 @@ from task_manager.users.models import CustomUser
 from task_manager.views_for_login import CustomDeleteView
 
 
-class UserLoginView(LoginView, SuccessMessageMixin):
+class UserLoginView(SuccessMessageMixin, LoginView):
     template_name = 'user_login.html'
     next_page = reverse_lazy('main_page')
     success_message = _('You are logged in.')

@@ -4,7 +4,7 @@ from task_manager.users.models import CustomUser
 
 class RegisterUpdateForm(UserCreationForm):
 
-    class Meta(object):
+    class Meta:
         model = CustomUser
         fields = [
             'first_name',

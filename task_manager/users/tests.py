@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user
 from django.contrib.messages import get_messages
 from django.test import TestCase
 from django.urls import reverse
@@ -18,14 +19,14 @@ class UserTestCase(TestCase):
             first_name='name_1',
             last_name='last_name_1',
             username='test_user_1',
-            password='test_pass_1',
+            password='bj0epvTN',
         )
         user_simple.save()
         user_protected = CustomUser.objects.create(
             first_name='name_2',
             last_name='last_name_2',
             username='test_user_2',
-            password='test_pass_2',
+            password='Wwk9vxl7',
         )
         user_protected.save()
         status_test = Status.objects.create(
@@ -59,24 +60,54 @@ class UserTestCase(TestCase):
             'first_name': 'name_3',
             'last_name': 'last_name_3',
             'username': 'test_user_3',
-            'password1': 'test_pass_3',
-            'password2': 'test_pass_3',
+            'password1': 'Nx7sDQ9D',
+            'password2': 'Nx7sDQ9D',
         }
         response = self.client.post(
             reverse('user_register'),
             data=user_new,
             follow=True,
         )
-
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
-            'User successfully registered',
+            'User successfully registered.',
         )
-        self.assertRedirects(response, 'user_login', status_code=CODE_REDIRECT)
-
+        self.assertRedirects(response, '/users/login/', status_code=CODE_REDIRECT)
         user_new = CustomUser.objects.get(pk=3)
         self.assertEqual(user_new.first_name, 'name_3')
         self.assertEqual(user_new.last_name, 'last_name_3')
         self.assertEqual(user_new.username, 'test_user_3')
-        self.assertTrue(user_new.check_password('test_pass_3'))
+        self.assertTrue(user_new.check_password('Nx7sDQ9D'))
+
+    def test_user_login(self):
+        response = self.client.get(reverse('user_login'))
+        self.assertEqual(response.status_code, CODE_OK)
+        self.assertTemplateUsed(response, template_name='user_login.html')
+        user_data = {
+            'username': 'test_user_1',
+            'password': 'bj0epvTN',
+        }
+        response = self.client.post(
+            reverse('user_login'),
+            data=user_data,
+            follow=True,
+        )
+        self.assertEqual(response.status_code, CODE_REDIRECT)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(
+            str(messages[0]),
+            'You are logged in.',
+        )
+
+    def test_user_logout(self):
+        self.client.force_login(CustomUser.objects.get(pk=1))
+        response = self.client.post(reverse('user_logout'))
+        self.assertEqual(response.status_code, CODE_REDIRECT)
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(
+            str(messages[0]),
+            'You are logged out.',
+        )
+        user = get_user(self.client)
+        self.assertFalse(user.is_authenticated)
