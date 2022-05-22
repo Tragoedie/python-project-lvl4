@@ -13,7 +13,7 @@ class CustomLoginMixin(LoginRequiredMixin):
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             messages.error(self.request, self.without_login_message)
-            return redirect('login')
+            return redirect('user_login')
         return super().dispatch(request, *args, **kwargs)
 
 

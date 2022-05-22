@@ -44,10 +44,10 @@ class StatusTestCase(TestCase):
         response = self.client.get(reverse('status_create'))
         self.assertEqual(response.status_code, CODE_OK)
         self.assertTemplateUsed(response, template_name='status_create.html')
-        status_test = {'name': 'status_test_2'}
+        status_create = {'name': 'status_test_2'}
         response = self.client.post(
             reverse('status_create'),
-            data=status_test,
+            data=status_create,
         )
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(

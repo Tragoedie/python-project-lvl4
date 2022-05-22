@@ -44,14 +44,14 @@ class LabelTestCase(TestCase):
         self.assertEqual(label_test.name, 'label_test')
         self.assertEqual(label_test.id, 1)
 
-    def test_label_create_(self):
+    def test_label_create(self):
         response = self.client.get(reverse('label_create'))
         self.assertEqual(response.status_code, CODE_OK)
         self.assertTemplateUsed(response, template_name='label_create.html')
-        label_test = {'name': 'label_test_2'}
+        label_create = {'name': 'label_test_2'}
         response = self.client.post(
             reverse('label_create'),
-            data=label_test,
+            data=label_create,
         )
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(

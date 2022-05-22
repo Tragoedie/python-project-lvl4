@@ -22,7 +22,7 @@ class TaskCreateView(CustomLoginMixin, SuccessMessageMixin, CreateView):
     template_name = 'task_create.html'
     form_class = TaskForm
     success_url = reverse_lazy('tasks')
-    success_message = _('Task successfully created')
+    success_message = _('Task successfully created.')
 
     def form_valid(self, form):
         form.instance.tasks_author = self.request.user
@@ -34,16 +34,16 @@ class TaskUpdateView(CustomLoginMixin, SuccessMessageMixin, UpdateView):
     model = Task
     form_class = TaskForm
     success_url = reverse_lazy('tasks')
-    success_message = _('Task successfully changed')
+    success_message = _('Task successfully changed.')
 
 
 class TaskDeleteView(CustomLoginMixin, SuccessMessageMixin, DeleteView):
     template_name = 'task_delete.html'
     model = Task
     success_url = reverse_lazy('tasks')
-    success_message = _('Task successfully deleted')
+    success_message = _('Task successfully deleted.')
     unable_to_delete_tasks = _(
-        'The task can only be deleted by its author',
+        'The task can only be deleted by its author.',
     )
 
     def get(self, request, *args, **kwargs):
