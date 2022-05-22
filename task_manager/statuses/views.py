@@ -19,7 +19,7 @@ class StatusCreateView(CustomLoginMixin, SuccessMessageMixin, CreateView):
     success_url = reverse_lazy('statuses')
     success_message = _('Status successfully created')
     fields = ('name', )
-    denied_without_login_message = _('You are not authorized! Please log in.')
+    denied_without_login_message = _('You are not authorized! Please, log in.')
 
 
 class StatusUpdateView(CustomLoginMixin, SuccessMessageMixin, UpdateView):
@@ -36,5 +36,5 @@ class StatusDeleteView(CustomDeleteView):
     success_url = reverse_lazy('statuses')
     success_message = _('Status successfully deleted')
     deletion_error_message = _(
-        'Can not delete status because it is in use',
+        'Can not delete this status - because it is in use',
     )
