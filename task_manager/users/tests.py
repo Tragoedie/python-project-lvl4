@@ -64,7 +64,7 @@ class UserTestCase(TestCase):
         }
         response = self.client.post(
             reverse('user_register'),
-            user_new,
+            data=user_new,
             follow=True,
         )
 
