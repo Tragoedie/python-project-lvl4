@@ -54,6 +54,7 @@ class UserTestCase(TestCase):
     def test_user_register(self):
         response = self.client.get(reverse('user_register'))
         self.assertEqual(response.status_code, CODE_OK)
+        self.assertTemplateUsed(response, template_name='user_register.html')
         user_new = {
             'first_name': 'name_3',
             'last_name': 'last_name_3',
@@ -66,12 +67,14 @@ class UserTestCase(TestCase):
             user_new,
             follow=True,
         )
+
         messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(len(messages), 1)
         self.assertEqual(
-            messages,
+            str(messages[0]),
             'User successfully registered',
         )
+        self.assertRedirects(response, 'user_login', status_code=CODE_REDIRECT)
+
         user_new = CustomUser.objects.get(pk=3)
         self.assertEqual(user_new.first_name, 'name_3')
         self.assertEqual(user_new.last_name, 'last_name_3')
