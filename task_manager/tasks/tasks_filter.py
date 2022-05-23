@@ -27,7 +27,7 @@ class TasksFilter(FilterSet):
         model = Task
         fields = [
             'status',
-            'tasks_executor',
+            'executor',
             'labels',
             'own_tasks',
         ]

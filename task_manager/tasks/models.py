@@ -30,7 +30,7 @@ class Task(models.Model):
         verbose_name=_('Author'),
         related_name='tasks_author',
     )
-    tasks_executor = models.ForeignKey(
+    executor = models.ForeignKey(
         CustomUser,
         on_delete=models.PROTECT,
         null=True,

@@ -7,11 +7,11 @@ class TaskAdmin(admin.ModelAdmin):
         'name',
         'status',
         'tasks_author',
-        'tasks_executor',
+        'executor',
         'created',
     )
     list_display_links = ('name', 'tasks_author', 'created')
-    search_fields = ('name', 'tasks_author', 'tasks_executor')
+    search_fields = ('name', 'tasks_author', 'executor')
 
 
 admin.site.register(Task, TaskAdmin)

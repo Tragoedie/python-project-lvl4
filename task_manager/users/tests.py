@@ -34,7 +34,7 @@ class UserTestCase(TestCase):
             name='task_test',
             status=status_test,
             tasks_author=user_protected,
-            tasks_executor=user_protected,
+            executor=user_protected,
         )
 
     def test_users_list(self):

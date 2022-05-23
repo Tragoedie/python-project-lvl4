@@ -30,7 +30,7 @@ class TaskTestCase(TestCase):
             name='task_test',
             status=status_test,
             tasks_author=user_test,
-            tasks_executor=user_test,
+            executor=user_test,
         )
         task_test.labels.add(label_test)
         self.client.force_login(user_test)
@@ -80,7 +80,7 @@ class TaskTestCase(TestCase):
             'name': 'task_update',
             'description': 'task_update',
             'status': 2,
-            'tasks_executor': 1,
+            'executor': 1,
         }
         response = self.client.post(
             reverse('task_update', args='1'),
@@ -96,7 +96,7 @@ class TaskTestCase(TestCase):
         self.assertEqual(Task.objects.get(pk=1).description, 'task_update')
         self.assertEqual(Task.objects.get(pk=1).status.name, 'status_update')
         self.assertEqual(
-            Task.objects.get(pk=1).tasks_executor.username,
+            Task.objects.get(pk=1).executor.username,
             'test_user_1',
         )
 

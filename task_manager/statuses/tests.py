@@ -26,7 +26,7 @@ class StatusTestCase(TestCase):
             name='task_test',
             status=status_test,
             tasks_author=user_test,
-            tasks_executor=user_test,
+            executor=user_test,
         )
         self.client.force_login(user_test)
 
