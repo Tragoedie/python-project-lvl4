@@ -8,7 +8,7 @@ from django_filters.views import FilterView
 from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
 from task_manager.tasks.tasks_filter import TasksFilter
-from task_manager.views_for_login import CustomLoginMixin
+from task_manager.custom_views import CustomLoginMixin
 
 
 class TasksListView(CustomLoginMixin, FilterView):

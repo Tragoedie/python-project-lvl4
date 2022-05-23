@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, ListView, UpdateView
 from task_manager.statuses.models import Status
-from task_manager.views_for_login import CustomDeleteView, CustomLoginMixin
+from task_manager.custom_views import CustomDeleteView, CustomLoginMixin
 
 
 class StatusesListView(CustomLoginMixin, ListView):

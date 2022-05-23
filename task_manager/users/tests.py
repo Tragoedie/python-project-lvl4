@@ -71,7 +71,7 @@ class UserTestCase(TestCase):
             str(messages[0]),
             'User successfully registered.',
         )
-        self.assertRedirects(response, '/users/login/', status_code=CODE_REDIRECT)
+        self.assertRedirects(response, '/login/', status_code=CODE_REDIRECT)
         user_new = CustomUser.objects.get(pk=3)
         self.assertEqual(user_new.first_name, 'name_3')
         self.assertEqual(user_new.last_name, 'last_name_3')
@@ -89,9 +89,8 @@ class UserTestCase(TestCase):
         response = self.client.post(
             reverse('user_login'),
             data=user_data,
-            follow=True,
         )
-#        self.assertEqual(response.status_code, CODE_REDIRECT)
+#        self.assertEqual(response.status_code, CODE_OK)
 #        messages = list(get_messages(response.wsgi_request))
 #        self.assertEqual(
 #            str(messages[0]),
@@ -135,9 +134,8 @@ class UserTestCase(TestCase):
         response = self.client.post(
             reverse('user_update', args='1'),
             user_update,
-            follow=True,
         )
-#       self.assertEqual(response.status_code, CODE_REDIRECT)
+        self.assertEqual(response.status_code, CODE_REDIRECT)
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
