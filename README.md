@@ -6,4 +6,12 @@
 
 <h1>Description:</h1>
 
+Task manager allows setting tasks, assigning performers and changing their statuses. Registration and authentication are required to work with the system.
+
+<h2> App at Heroku:</h2>
+
+Task manager is also deployed on Heroku, so feel free to register and make experiments with it:
+
 https://task-manager-tragoedia.herokuapp.com/
+
+All possible errors and bugs will be sent to Rollbar automatically and fixed as soon as possible.
