@@ -8,6 +8,6 @@
 <p>{% translate 'Are you sure that you want to delete user?' %} <b>{{ user.get_full_name }}?</b>?</p>
 <form method="post">
     {% csrf_token %}
-    <button type="submit" class="btn btn-danger">{% trans 'Delete' %}</button>
+    <button type="submit" class="btn btn-danger">{% trans 'Yes, delete' %}</button>
 </form>
 {% endblock %}
