@@ -219,7 +219,7 @@ msgstr "Выход"
 #: task_manager/templates/layout/basic.html:44
 #: task_manager/templates/users/user_login.html:7
 msgid "Login"
-msgstr "Войти"
+msgstr "Вход"
 
 #: task_manager/templates/layout/basic.html:47
 #: task_manager/templates/users/user_register.html:7
@@ -303,7 +303,7 @@ msgstr "Вы уверены, что хотите удалить пользова
 
 #: task_manager/templates/users/user_login.html:11
 msgid "Enter"
-msgstr "Вход"
+msgstr "Войти"
 
 #: task_manager/templates/users/user_register.html:11
 msgid "Register"
