@@ -14,7 +14,14 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', default=False)
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    ' 0.0.0.0',
+    ' webserver:9000',
+    ' webserver',
+    ' localhost',
+    ' task-manager-tragoedia.herokuapp.com',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
