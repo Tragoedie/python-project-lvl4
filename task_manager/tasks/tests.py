@@ -135,6 +135,16 @@ class TaskTestCase(TestCase):
             'The task can only be deleted by its author.',
         )
 
+    def test_task_detail(self):
+        task_test = Task.objects.get(pk=1)
+        response = self.client.get(reverse('task_details', args='1'))
+        self.assertEqual(response.status_code, CODE_OK)
+        self.assertTemplateUsed(response, template_name='task_details.html')
+        self.assertContains(response, task_test.name)
+        self.assertContains(response, task_test.description)
+        self.assertContains(response, task_test.tasks_author)
+        self.assertContains(response, task_test.status)
+
     def test_filter_by_status(self):
         filter_by_status = '{0}?status=1&tasks_executor=&labels='.format(reverse('tasks'))
         response = self.client.get(filter_by_status)

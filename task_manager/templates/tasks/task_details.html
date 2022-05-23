@@ -15,11 +15,11 @@
         <div class="container">
             <div class="row p-1">
                 <div class="col">{% trans 'Author' %}</div>
-                <div class="col">{{ task.author }}</div>
+                <div class="col">{{ task.tasks_author }}</div>
             </div>
             <div class="row p-1">
                 <div class="col">{% trans 'Executor' %}</div>
-                <div class="col">{{ task.executor }}</div>
+                <div class="col">{{ task.tasks_executor }}</div>
             </div>
             <div class="row p-1">
                 <div class="col">{% trans 'Status' %}</div>
@@ -46,9 +46,9 @@
             </div>
             <div class="row p-1">
                 <div class="col">
-                    <a href="{% url 'update_task' task.pk %}">{% trans 'Change' %}</a>
+                    <a href="{% url 'task_update' task.pk %}">{% trans 'Change' %}</a>
                     <br>
-                    <a href="{% url 'delete_task' task.pk %}">{% trans 'Delete' %}</a>
+                    <a href="{% url 'task_delete' task.pk %}">{% trans 'Delete' %}</a>
                 </div>
             </div>
         </div>

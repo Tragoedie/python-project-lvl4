@@ -56,5 +56,5 @@ class TaskDeleteView(CustomLoginMixin, SuccessMessageMixin, DeleteView):
 
 
 class TaskDetailsView(CustomLoginMixin, DetailView):
-    form_class = TaskForm
+    model = Task
     template_name = 'task_details.html'
