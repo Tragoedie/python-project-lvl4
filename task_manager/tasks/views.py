@@ -5,10 +5,10 @@ from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from django_filters.views import FilterView
+from task_manager.custom_views import CustomLoginMixin
 from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
 from task_manager.tasks.tasks_filter import TasksFilter
-from task_manager.custom_views import CustomLoginMixin
 
 
 class TasksListView(CustomLoginMixin, FilterView):

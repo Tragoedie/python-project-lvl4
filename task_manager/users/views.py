@@ -5,12 +5,9 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, ListView, UpdateView
+from task_manager.custom_views import CustomDeleteView
 from task_manager.users.forms import RegisterUpdateForm
 from task_manager.users.models import CustomUser
-from task_manager.custom_views import (
-    CustomDeleteView,
-    CustomLoginMixin,
-)
 
 
 class UserLoginView(SuccessMessageMixin, LoginView):
@@ -40,7 +37,7 @@ class UserRegisterView(SuccessMessageMixin, CreateView):
     model = CustomUser
     success_url = reverse_lazy('user_login')
     form_class = RegisterUpdateForm
-    success_message = _('User successfully registered.')
+    success_message = _('User successfully registered')
 
 
 class UserUpdateView(SuccessMessageMixin, UpdateView):
@@ -49,7 +46,9 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
     success_url = reverse_lazy('users')
     form_class = RegisterUpdateForm
     success_message = _('User successfully changed.')
-    unable_to_change_message = _('You have not permission to change another user.')
+    unable_to_change_message = _(
+        'You have not permission to change another user.',
+    )
 
     def get(self, request, *args, **kwargs):
         if request.user != self.get_object():

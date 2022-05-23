@@ -2,8 +2,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, ListView, UpdateView
-from task_manager.labels.models import Label
 from task_manager.custom_views import CustomDeleteView, CustomLoginMixin
+from task_manager.labels.models import Label
 
 
 class LabelsListView(CustomLoginMixin, ListView):
