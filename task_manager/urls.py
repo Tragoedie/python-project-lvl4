@@ -1,9 +1,12 @@
 from django.contrib import admin
 from django.urls import include, path
 from task_manager import views
+from task_manager.users.views import UserLoginView, UserLogoutView
 
 urlpatterns = [
     path('', views.main, name='main_page'),
+    path('login/', UserLoginView.as_view(), name='user_login'),
+    path('logout/', UserLogoutView.as_view(), name='user_logout'),
     path('users/', include('task_manager.users.urls')),
     path('statuses/', include('task_manager.statuses.urls')),
     path('tasks/', include('task_manager.tasks.urls')),
