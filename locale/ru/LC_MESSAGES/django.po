@@ -348,28 +348,28 @@ msgstr "Пользователь"
 
 #: task_manager/users/views.py:20
 msgid "You are logged in."
-msgstr "Вы залогинены."
+msgstr "Вы залогинены"
 
 #: task_manager/users/views.py:29
 msgid "You are logged out."
-msgstr "Вы разлогинены."
+msgstr "Вы разлогинены"
 
 #: task_manager/users/views.py:44
 msgid "User successfully registered."
-msgstr "Пользователь успешно зарегистрирован."
+msgstr "Пользователь успешно зарегистрирован"
 
 #: task_manager/users/views.py:52
-msgid "User successfully changed."
+msgid "User successfully changed"
 msgstr "Пользователь успешно изменен"
 
 #: task_manager/users/views.py:59
 msgid "User successfully deleted."
-msgstr "Пользователь успешно удалён."
+msgstr "Пользователь успешно удалён"
 
 #: task_manager/users/views.py:61
 msgid "You have not permission to deleted another user."
-msgstr "У вас нет прав для удаления другого пользователя."
+msgstr "У вас нет прав для удаления другого пользователя"
 
 #: task_manager/users/views.py:64
 msgid "You can not delete this user - because it is in use."
-msgstr "Невозможно удалить этого пользователя - потому что он используется."
+msgstr "Невозможно удалить этого пользователя - потому что он используется"

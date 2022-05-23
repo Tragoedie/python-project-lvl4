@@ -37,7 +37,7 @@ class UserRegisterView(SuccessMessageMixin, CreateView):
     model = CustomUser
     success_url = reverse_lazy('user_login')
     form_class = RegisterUpdateForm
-    success_message = _('User successfully registered')
+    success_message = _('User successfully registered.')
 
 
 class UserUpdateView(SuccessMessageMixin, UpdateView):
@@ -45,7 +45,7 @@ class UserUpdateView(SuccessMessageMixin, UpdateView):
     model = CustomUser
     success_url = reverse_lazy('users')
     form_class = RegisterUpdateForm
-    success_message = _('User successfully changed.')
+    success_message = _('User successfully changed')
     unable_to_change_message = _(
         'You have not permission to change another user.',
     )
