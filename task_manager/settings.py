@@ -4,6 +4,7 @@ from pathlib import Path
 
 import rollbar
 from dotenv import load_dotenv
+from django.utils.translation import gettext_lazy as _
 
 load_dotenv()
 
@@ -96,10 +97,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-LANGUAGES = (
-    ('en', 'English'),
-    ('ru', 'Russian'),
-)
+LANGUAGES = [
+    ('en', _('English')),
+    ('ru', _('Russian')),
+]
+
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'), )
 
 TIME_ZONE = 'UTC'
 
@@ -117,7 +120,6 @@ ROLLBAR = {
     'access_token': os.getenv('ROLLBAR_TOKEN'),
     'environment': 'development' if DEBUG else 'production',
     'root': BASE_DIR,
-    'enabled': not DEBUG,
 }
 
 rollbar.init(**ROLLBAR)

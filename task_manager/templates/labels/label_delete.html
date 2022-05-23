@@ -5,7 +5,7 @@
 
 {% block content %}
 <h1 class="my-4">{% trans 'Delete label' %}</h1>
-<p>{% trans 'Are you sure that you want to delete label' %} <b>{{ label.name }}?</b>?</p>
+<p>{% trans 'Are you sure that you want to delete label?' %} <b>{{ label.name }}?</b>?</p>
 <form method="post">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">{% trans 'Delete' %}</button>

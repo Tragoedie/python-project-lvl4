@@ -9,8 +9,6 @@ test:
 test-coverage:
 	poetry run pytest --cov=task_manager --cov-report xml
 
-check: lint test
-
 lint:
 	poetry run flake8 task_manager
 
@@ -26,3 +24,9 @@ shell:
 
 run:
 	$(MANAGE) runserver
+
+messages:
+	$(MANAGE) makemessages -l ru -i env
+
+compile:
+	$(MANAGE) compilemessages --ignore=cache --ignore=.venv/*/locale
