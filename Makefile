@@ -4,14 +4,10 @@ install:
 	poetry install
 
 test:
-	$(MANAGE) test
+	poetry run coverage run --omit '.venv/*' --source '.' manage.py test
 
 test-coverage:
-	poetry run pytest --cov=task_manager --cov-report xml
-
-test-cov:
 	poetry run coverage xml
-
 
 lint:
 	poetry run flake8 task_manager

@@ -17,15 +17,18 @@ jobs:
         run: |
           pip install poetry
           make install
-      - uses: paambaati/codeclimate-action@v2.7.5
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-          LOCALE: ${{ secrets.LOCALE }}
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          - name: Run linter and tests
-            run: |
-              make lint
-              make test
-          coverageCommand: make test-cov
-          debug: true
+      - name: Run linter
+        run: |
+          make lint
+      - name: Run linter
+          run: make test
+          env:
+            SECRET_KEY: ${{ secrets.SECRET_KEY }}
+            LOCALE: ${{ secrets.LOCALE }}
+      - name: Publish code coverage report
+          uses: paambaati/codeclimate-action@v2.7.5
+          env:
+            CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          with:
+            coverageCommand: make test-coverage
+            debug: true
