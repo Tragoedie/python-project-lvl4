@@ -1,0 +1,376 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-24 06:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: task_manager/custom_views.py:11
+msgid "You are not authorized! Please log in."
+msgstr ""
+
+#: task_manager/labels/models.py:12 task_manager/statuses/models.py:12
+#: task_manager/tasks/models.py:16
+#: task_manager/templates/labels/labels_list.html:14
+#: task_manager/templates/statuses/statuses_list.html:14
+#: task_manager/templates/tasks/tasks_list.html:28
+msgid "Name"
+msgstr "Name"
+
+#: task_manager/labels/models.py:16 task_manager/statuses/models.py:16
+#: task_manager/tasks/models.py:51
+msgid "Created"
+msgstr "Created"
+
+#: task_manager/labels/models.py:23 task_manager/tasks/tasks_filter.py:11
+msgid "Label"
+msgstr "Label"
+
+#: task_manager/labels/models.py:24 task_manager/tasks/models.py:44
+#: task_manager/templates/labels/labels_list.html:7
+#: task_manager/templates/layout/basic.html:30
+#: task_manager/templates/tasks/task_details.html:34
+msgid "Labels"
+msgstr "Labels"
+
+#: task_manager/labels/views.py:19
+msgid "Label successfully created."
+msgstr "Label successfully created."
+
+#: task_manager/labels/views.py:27
+msgid "Label successfully changed."
+msgstr "Label successfully changed."
+
+#: task_manager/labels/views.py:35
+msgid "Label successfully deleted."
+msgstr "Label successfully deleted."
+
+#: task_manager/labels/views.py:37
+msgid "Can not delete this label - because it is in use."
+msgstr "Can not delete this label - because it is in use."
+
+#: task_manager/settings.py:107
+msgid "English"
+msgstr "English"
+
+#: task_manager/settings.py:108
+msgid "Russian"
+msgstr "Russian"
+
+#: task_manager/statuses/models.py:23 task_manager/tasks/models.py:25
+#: task_manager/templates/tasks/task_details.html:25
+#: task_manager/templates/tasks/tasks_list.html:29
+msgid "Status"
+msgstr "Status"
+
+#: task_manager/statuses/models.py:24
+#: task_manager/templates/layout/basic.html:27
+#: task_manager/templates/statuses/statuses_list.html:7
+msgid "Statuses"
+msgstr "Statuses"
+
+#: task_manager/statuses/views.py:20
+msgid "Status successfully created."
+msgstr "Status successfully created."
+
+#: task_manager/statuses/views.py:22
+msgid "You are not authorized! Please, log in."
+msgstr "You are not authorized! Please, log in."
+
+#: task_manager/statuses/views.py:29
+msgid "Status successfully changed."
+msgstr "Status successfully changed."
+
+#: task_manager/statuses/views.py:37
+msgid "Status successfully deleted."
+msgstr "Status successfully deleted."
+
+#: task_manager/statuses/views.py:39
+msgid "Can not delete this status - because it is in use."
+msgstr "Can not delete this status - because it is in use."
+
+#: task_manager/tasks/models.py:20
+msgid "Description"
+msgstr "Description"
+
+#: task_manager/tasks/models.py:30
+#: task_manager/templates/tasks/task_details.html:17
+#: task_manager/templates/tasks/tasks_list.html:30
+msgid "Author"
+msgstr "Author"
+
+#: task_manager/tasks/models.py:38
+#: task_manager/templates/tasks/task_details.html:21
+#: task_manager/templates/tasks/tasks_list.html:31
+msgid "Executor"
+msgstr "Executor"
+
+#: task_manager/tasks/models.py:58
+msgid "Task"
+msgstr "Task"
+
+#: task_manager/tasks/models.py:59 task_manager/templates/layout/basic.html:33
+#: task_manager/templates/tasks/tasks_list.html:7
+msgid "Tasks"
+msgstr "Tasks"
+
+#: task_manager/tasks/tasks_filter.py:16
+msgid "Show_own_tasks"
+msgstr "Show own tasks"
+
+#: task_manager/tasks/views.py:25
+msgid "Task successfully created."
+msgstr "Task successfully created."
+
+#: task_manager/tasks/views.py:37
+msgid "Task successfully changed."
+msgstr "Task successfully changed."
+
+#: task_manager/tasks/views.py:44
+msgid "Task successfully deleted."
+msgstr "Task successfully deleted."
+
+#: task_manager/tasks/views.py:46
+msgid "The task can only be deleted by its author."
+msgstr "The task can only be deleted by its author."
+
+#: task_manager/templates/labels/label_create.html:7
+#: task_manager/templates/labels/labels_list.html:8
+msgid "Create label"
+msgstr "Create label"
+
+#: task_manager/templates/labels/label_create.html:11
+#: task_manager/templates/statuses/status_create.html:11
+#: task_manager/templates/tasks/task_create.html:11
+msgid "Create"
+msgstr "Create"
+
+#: task_manager/templates/labels/label_delete.html:7
+msgid "Delete label"
+msgstr "Delete label"
+
+#: task_manager/templates/labels/label_delete.html:8
+msgid "Are you sure that you want to delete label?"
+msgstr "Are you sure that you want to delete label?"
+
+#: task_manager/templates/labels/label_delete.html:11
+#: task_manager/templates/statuses/status_delete.html:11
+#: task_manager/templates/tasks/task_delete.html:11
+#: task_manager/templates/users/user_delete.html:11
+msgid "Yes, delete"
+msgstr "Yes, delete"
+
+#: task_manager/templates/labels/label_update.html:7
+msgid "Change label"
+msgstr "Change label"
+
+#: task_manager/templates/labels/label_update.html:11
+#: task_manager/templates/labels/labels_list.html:26
+#: task_manager/templates/statuses/status_update.html:11
+#: task_manager/templates/statuses/statuses_list.html:26
+#: task_manager/templates/tasks/task_details.html:49
+#: task_manager/templates/tasks/task_update.html:11
+#: task_manager/templates/tasks/tasks_list.html:48
+msgid "Change"
+msgstr "Change"
+
+#: task_manager/templates/labels/labels_list.html:15
+#: task_manager/templates/statuses/statuses_list.html:15
+#: task_manager/templates/tasks/task_details.html:29
+#: task_manager/templates/tasks/tasks_list.html:32
+msgid "Creation date"
+msgstr "Creation date"
+
+#: task_manager/templates/labels/labels_list.html:28
+#: task_manager/templates/statuses/statuses_list.html:28
+#: task_manager/templates/tasks/task_details.html:51
+#: task_manager/templates/tasks/tasks_list.html:50
+#: task_manager/templates/users/users_list.html:29
+msgid "Delete"
+msgstr "Delete"
+
+#: task_manager/templates/labels/labels_list.html:35
+msgid "No labels"
+msgstr "No labels"
+
+#: task_manager/templates/layout/basic.html:9
+#: task_manager/templates/layout/basic.html:16
+msgid "Task manager"
+msgstr "Task manager"
+
+#: task_manager/templates/layout/basic.html:23
+#: task_manager/templates/users/users_list.html:7
+#: task_manager/users/models.py:12
+msgid "Users"
+msgstr "Users"
+
+#: task_manager/templates/layout/basic.html:40
+msgid "Logout"
+msgstr "Logout"
+
+#: task_manager/templates/layout/basic.html:44
+#: task_manager/templates/users/user_login.html:7
+msgid "Login"
+msgstr "Login"
+
+#: task_manager/templates/layout/basic.html:47
+#: task_manager/templates/users/user_register.html:7
+msgid "Sign up"
+msgstr "Sign up"
+
+#: task_manager/templates/main_page.html:11
+#: task_manager/templates/main_page.html:13
+msgid "guest"
+msgstr ""
+
+#: task_manager/templates/main_page.html:12
+msgid "Welcome to Task Manager,"
+msgstr "Welcome to Task Manager,"
+
+#: task_manager/templates/main_page.html:15
+msgid "Task Manager - the fourth project of the hexlet school."
+msgstr "Task Manager - the fourth project of the hexlet school."
+
+#: task_manager/templates/main_page.html:17
+msgid "Learn more"
+msgstr "Learn more"
+
+#: task_manager/templates/statuses/status_create.html:7
+#: task_manager/templates/statuses/statuses_list.html:8
+msgid "Create status"
+msgstr "Create status"
+
+#: task_manager/templates/statuses/status_delete.html:7
+msgid "Delete status"
+msgstr "Delete status"
+
+#: task_manager/templates/statuses/status_delete.html:8
+msgid "Are you sure that you want to delete status?"
+msgstr "Are you sure that you want to delete status?"
+
+#: task_manager/templates/statuses/status_update.html:7
+msgid "Change status"
+msgstr "Change status"
+
+#: task_manager/templates/statuses/statuses_list.html:35
+msgid "No statuses"
+msgstr "No statuses"
+
+#: task_manager/templates/tasks/task_create.html:7
+#: task_manager/templates/tasks/tasks_list.html:8
+msgid "Create task"
+msgstr "Create task"
+
+#: task_manager/templates/tasks/task_delete.html:7
+msgid "Delete task"
+msgstr "Delete task"
+
+#: task_manager/templates/tasks/task_delete.html:8
+msgid "Are you sure that you want to delete task?"
+msgstr "Are you sure that you want to delete task?"
+
+#: task_manager/templates/tasks/task_details.html:7
+msgid "Task details"
+msgstr "Task details"
+
+#: task_manager/templates/tasks/task_details.html:42
+msgid "No bound labels"
+msgstr "No bound labels"
+
+#: task_manager/templates/tasks/task_update.html:7
+msgid "Change task"
+msgstr "Change task"
+
+#: task_manager/templates/tasks/tasks_list.html:57
+msgid "No tasks"
+msgstr "No tasks"
+
+#: task_manager/templates/users/user_delete.html:7
+msgid "Delete user"
+msgstr "Delete user"
+
+#: task_manager/templates/users/user_delete.html:8
+msgid "Are you sure that you want to delete user?"
+msgstr "Are you sure that you want to delete user?"
+
+#: task_manager/templates/users/user_login.html:11
+msgid "Enter"
+msgstr "Enter"
+
+#: task_manager/templates/users/user_register.html:11
+msgid "Register"
+msgstr "Register"
+
+#: task_manager/templates/users/user_update.html:7
+msgid "Update user"
+msgstr "Update user"
+
+#: task_manager/templates/users/user_update.html:11
+#: task_manager/templates/users/users_list.html:27
+msgid "Update"
+msgstr "Update"
+
+#: task_manager/templates/users/users_list.html:13
+msgid "Username"
+msgstr "Username"
+
+#: task_manager/templates/users/users_list.html:14
+msgid "Full name"
+msgstr "Full name"
+
+#: task_manager/templates/users/users_list.html:15
+msgid "Date joined"
+msgstr "Date joined"
+
+#: task_manager/templates/users/users_list.html:36
+msgid "No users"
+msgstr "No users"
+
+#: task_manager/users/models.py:11
+msgid "User"
+msgstr "User"
+
+#: task_manager/users/views.py:15
+msgid "You are logged in."
+msgstr "You are logged in."
+
+#: task_manager/users/views.py:25
+msgid "You are logged out."
+msgstr "You are logged out."
+
+#: task_manager/users/views.py:40
+msgid "User successfully registered."
+msgstr "User successfully registered."
+
+#: task_manager/users/views.py:48
+msgid "User successfully changed"
+msgstr "User successfully changed"
+
+#: task_manager/users/views.py:50
+msgid "You have not permission to change another user."
+msgstr "You have not permission to change another user."
+
+#: task_manager/users/views.py:66
+msgid "User successfully deleted."
+msgstr "User successfully deleted."
+
+#: task_manager/users/views.py:68
+msgid "You have not permission to deleted another user."
+msgstr "You have not permission to deleted another user."
+
+#: task_manager/users/views.py:71
+msgid "You can not delete this user - because it is in use."
+msgstr "You can not delete this user - because it is in use."
