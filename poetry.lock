@@ -1,6 +1,6 @@
 [[package]]
 name = "asgiref"
-version = "3.5.1"
+version = "3.5.2"
 description = "ASGI specs, helper code, and adapters"
 category = "main"
 optional = false
@@ -256,7 +256,7 @@ flake8 = ">=2"
 
 [[package]]
 name = "flake8-comprehensions"
-version = "3.9.0"
+version = "3.10.0"
 description = "A flake8 plugin to help you write better list/set/dict comprehensions."
 category = "dev"
 optional = false
@@ -786,8 +786,8 @@ content-hash = "f5e838dd6dfc29c549b564622eb0d54a2bd02552884cef5a8b601131fdf2d9b2
 
 [metadata.files]
 asgiref = [
-    {file = "asgiref-3.5.1-py3-none-any.whl", hash = "sha256:45a429524fba18aba9d512498b19d220c4d628e75b40cf5c627524dbaebc5cc1"},
-    {file = "asgiref-3.5.1.tar.gz", hash = "sha256:fddeea3c53fa99d0cdb613c3941cc6e52d822491fc2753fba25768fb5bf4e865"},
+    {file = "asgiref-3.5.2-py3-none-any.whl", hash = "sha256:1d2880b792ae8757289136f1db2b7b99100ce959b2aa57fd69dab783d05afac4"},
+    {file = "asgiref-3.5.2.tar.gz", hash = "sha256:4a29362a6acebe09bf1d6640db38c1dc3d9217c68e6f9f6204d72667fc19a424"},
 ]
 astor = [
     {file = "astor-0.8.1-py2.py3-none-any.whl", hash = "sha256:070a54e890cefb5b3739d19f30f5a5ec840ffc9c50ffa7d23cc9fc1a38ebbfc5"},
@@ -927,8 +927,8 @@ flake8-commas = [
     {file = "flake8_commas-2.1.0-py2.py3-none-any.whl", hash = "sha256:ebb96c31e01d0ef1d0685a21f3f0e2f8153a0381430e748bf0bbbb5d5b453d54"},
 ]
 flake8-comprehensions = [
-    {file = "flake8-comprehensions-3.9.0.tar.gz", hash = "sha256:20c2f6846090e8f265e757f0aa500614c88b0f9ffb0d954d330dcd8abd8f874e"},
-    {file = "flake8_comprehensions-3.9.0-py3-none-any.whl", hash = "sha256:ef3a069809d4eb60805cd9b0ea2aa1aae21b527a460e704c01e0dd3416c99aeb"},
+    {file = "flake8-comprehensions-3.10.0.tar.gz", hash = "sha256:181158f7e7aa26a63a0a38e6017cef28c6adee71278ce56ce11f6ec9c4905058"},
+    {file = "flake8_comprehensions-3.10.0-py3-none-any.whl", hash = "sha256:dad454fd3d525039121e98fa1dd90c46bc138708196a4ebbc949ad3c859adedb"},
 ]
 flake8-debugger = [
     {file = "flake8-debugger-4.1.2.tar.gz", hash = "sha256:52b002560941e36d9bf806fca2523dc7fb8560a295d5f1a6e15ac2ded7a73840"},
