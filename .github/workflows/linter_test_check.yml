@@ -26,5 +26,5 @@ jobs:
           LOCALE: ${{ secrets.LOCALE }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: make test
+          coverageCommand: make test-cov
           debug: true
