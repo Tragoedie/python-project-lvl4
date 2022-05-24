@@ -10,7 +10,6 @@ test-coverage:
 	poetry run pytest --cov=task_manager --cov-report xml
 
 test-cov:
-	$(MANAGE) test
 	poetry run coverage xml
 
 
