@@ -23,6 +23,7 @@ jobs:
       - uses: paambaati/codeclimate-action@v2.7.5
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          LOCALE: ${{ secrets.LOCALE }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageCommand: make test
