@@ -26,9 +26,9 @@ jobs:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           LOCALE: ${{ secrets.LOCALE }}
       - name: Publish code coverage report
-          uses: paambaati/codeclimate-action@v2.7.5
-          env:
-            CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-          with:
-            coverageCommand: make test-coverage
-            debug: true
+        uses: paambaati/codeclimate-action@v2.7.5
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: make test-coverage
+          debug: true
