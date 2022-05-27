@@ -90,7 +90,7 @@ class UserTestCase(TestCase):
             reverse('user_login'),
             data=user_data,
         )
-#        self.assertEqual(response.status_code, CODE_OK)
+#       self.assertRedirects(resp, TASKS_LIST_URL)
 #        messages = list(get_messages(response.wsgi_request))
 #        self.assertEqual(
 #            str(messages[0]),
@@ -168,7 +168,7 @@ class UserTestCase(TestCase):
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(
             str(messages[0]),
-            'You have not permission to deleted another user.',
+            'You have not permission to change another user.',
         )
 
     def test_user_delete_busy_user(self):

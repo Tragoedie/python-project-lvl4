@@ -46,13 +46,12 @@ class TaskDeleteView(CustomLoginMixin, SuccessMessageMixin, DeleteView):
         'The task can only be deleted by its author.',
     )
 
-    def get(self, request, *args, **kwargs):
-        if request.user != self.get_object().tasks_author:
-            messages.error(
-                self.request, self.unable_to_delete_tasks,
-            )
-            return redirect('tasks')
-        return super().get(request, *args, **kwargs)
+    def form_valid(self, form):
+        if self.request.user == self.get_object().tasks_author:
+            super().form_valid(form)
+        else:
+            messages.error(self.request, self.unable_to_delete_tasks)
+        return redirect(self.success_url)
 
 
 class TaskDetailsView(CustomLoginMixin, DetailView):

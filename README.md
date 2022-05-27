@@ -16,3 +16,27 @@ Task manager is also deployed on Heroku, so feel free to register and make exper
 https://task-manager-tragoedia.herokuapp.com/
 
 All possible errors and bugs will be sent to Rollbar automatically and fixed as soon as possible.
+
+<h2>Commands to start the application:</h2>
+
+1) Clone repo:
+
+```bash
+$ pip install --user git+https://github.com/Tragoedie/python-project-lvl4.git
+```
+2) Create .env file
+```bash
+examples names of variables are placed in file: env.example
+```
+3) Install dependencies:
+```bash
+$ make install
+```
+4) Start migrations:
+```bash
+$ make migrate
+```
+5) Launch your server:
+```bash
+$ make run
+```

@@ -127,13 +127,10 @@ class TaskTestCase(TestCase):
             status=Status.objects.get(pk=1),
             tasks_author=test_user_2,
         )
-        response = self.client.get(reverse('task_delete', args='2'))
-        self.assertEqual(response.status_code, CODE_REDIRECT)
-        messages = list(get_messages(response.wsgi_request))
-        self.assertEqual(
-            str(messages[0]),
-            'The task can only be deleted by its author.',
-        )
+        url = reverse('task_delete', args='2')
+        response = self.client.post(url, follow=True)
+        self.assertRedirects(response, '/tasks/')
+        self.assertContains(response, 'The task can only be deleted by its author.')
 
     def test_task_detail(self):
         task_test = Task.objects.get(pk=1)
