@@ -3,7 +3,7 @@ dist/
 .venv/
 coverage.xml
 .coverage
-tests/hexlet test/
 .env
 staticfiles/
 .pytest_cache
+db.sqlite3
